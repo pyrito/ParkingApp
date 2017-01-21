@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.first_layout) {
             // Handle the camera action
+            // Ayy lmao
             fragmentManager.beginTransaction().replace(R.id.content_main, new FirstFragment()).commit();
         } else if (id == R.id.second_layout) {
             fragmentManager.beginTransaction().replace(R.id.content_main, new SecondFragment()).commit();

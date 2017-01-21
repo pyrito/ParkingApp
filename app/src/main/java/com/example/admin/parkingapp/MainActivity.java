@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.FragmentManager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -78,12 +79,14 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        FragmentManager fragmentManager = getFragmentManager();
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.first_layout) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
+            fragmentManager.beginTransaction().replace(R.id.content_main, new FirstFragment()).commit();
+        } else if (id == R.id.second_layout) {
+            fragmentManager.beginTransaction().replace(R.id.content_main, new SecondFragment()).commit();
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
